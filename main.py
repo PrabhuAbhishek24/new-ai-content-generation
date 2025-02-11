@@ -189,7 +189,7 @@ def save_as_scorm_word(content, file_name="scorm_package.zip"):
         zf.writestr("response.docx", docx_buffer.getvalue())
            
 
-        html_content = """
+       html_content = """
        <html>
        <head><title>Research Content Response</title></head>
        <body>
