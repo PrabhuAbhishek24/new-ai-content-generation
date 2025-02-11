@@ -189,18 +189,16 @@ def save_as_scorm_word(content, file_name="scorm_package.zip"):
         zf.writestr("response.docx", docx_buffer.getvalue())
            
 
-
-        # Create HTML file
-        html_content = f"""
-        <html>
-        <head><title>Research Content Response</title></head>
-        <body>
-        <h1>Research Content Response</h1>
-        <p>{content.replace('\n', '<br>')}</p>
-        </body>
-        </html>
-        """
-        zf.writestr("index.html", html_content)
+        html_content = """
+       <html>
+       <head><title>Research Content Response</title></head>
+       <body>
+       <h1>Research Content Response</h1>
+       <p>{}</p>
+       </body>
+       </html>
+       """.format(content.replace("\n", "<br>"))
+       zf.writestr("index.html", html_content)
    
 
     scorm_zip.seek(0)
